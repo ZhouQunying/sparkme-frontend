@@ -1,0 +1,5 @@
+@import "./valiable";
+
+@mixin main-max-width {
+  max-width: $main-max-width;
+}

@@ -1,0 +1,16 @@
+@import "~compass-mixins/lib/compass/utilities/general/clearfix";
+
+@import "../../styles/mixin";
+
+.navbar {
+  @include main-max-width;
+  margin: 0 auto;
+
+  .navbar-left {
+    float: left;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+}
