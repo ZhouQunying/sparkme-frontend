@@ -1,0 +1,92 @@
+@import "~compass-mixins/lib/compass/reset/utilities";
+@import "~compass-mixins/lib/compass/css3/user-interface";
+@import "~compass-mixins/lib/compass/utilities/general/clearfix";
+@import "~compass-mixins/lib/compass/typography/links";
+// @import "~compass-mixins/lib/compass/css3/transition";
+@import "~compass-mixins/lib/compass/css3/border-radius";
+
+@import "../../styles/valiables";
+@import "../../styles/mixins";
+
+$navbar-height: 65px;
+
+.navbar {
+  @include user-select(none);
+
+  width: 100%;
+  height: $navbar-height;
+  background-color: #fff;
+}
+
+.navbar-container {
+  @include main-max-width;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  line-height: $navbar-height;
+  float: left;
+  font-size: 1.75em;
+  font-weight: 200;
+
+  a {
+    @include unstyled-link;
+    @include link-colors($theme-color);
+  }
+}
+
+.navbar-user {
+  float: right;
+  @include clearfix;
+}
+
+.navbar-search {
+  $search-margin: 10px;
+
+  margin: $search-margin;
+  line-height: $navbar-height - $search-margin * 2;
+  float: left;
+
+  input {
+    width: 200px;
+    height: 2em;
+    line-height: 2em;
+    font-size: 14px;
+    border: none;
+    @include reset-focus;
+  }
+}
+
+.svg-icon {
+  // @include transition-duration(.1s);
+  transition: fill .1s;
+  fill: rgba(0, 0, 0, .5);
+
+  &:hover {
+    fill: rgba(0, 0, 0, 1);
+  }
+
+  svg {
+    line-height: 45px;
+  }
+}
+
+.navbar-avater {
+  $avatar-size: 32px;
+
+  position: relative;
+  top: -50%;
+  width: $avatar-size;
+  height: $avatar-size;
+  margin-top: ($navbar-height - $avatar-size) / 2;
+  float: right;
+  @include border-radius(50%);
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
