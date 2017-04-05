@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileModule } from './profile/profile.module';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    SvgIconComponent
   ],
   imports: [
     BrowserModule,
