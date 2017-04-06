@@ -7,8 +7,8 @@
 
       <div class="navbar-user">
         <div class="navbar-search">
-          <app-svg-icon class="svg-icon" [draw]="searchIconDraw"></app-svg-icon>
-          <input type="text" placeholder="Search">
+          <app-svg-icon class="svg-icon" [draw]="searchIconDraw" (click)="searchInputToggle()"></app-svg-icon>
+          <input type="text" placeholder="Search" *ngIf="searchInputShow">
         </div>
 
         <div class="avatar navbar-avater">
