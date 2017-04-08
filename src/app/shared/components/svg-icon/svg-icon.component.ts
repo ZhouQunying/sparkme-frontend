@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 export class SvgDraw {
-  constructor(private size: number, private viewbox: string, private path: string) { }
+  constructor(
+    private size: number,
+    private viewbox: string,
+    private path: string) { }
 }
 
 @Component({
