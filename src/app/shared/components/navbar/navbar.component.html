@@ -7,8 +7,13 @@
 
       <div class="navbar-user">
         <div class="navbar-search">
-          <app-svg-icon class="svg-icon" [draw]="searchIconDraw" (click)="searchInputToggle()"></app-svg-icon>
-          <input type="text" placeholder="Search" *ngIf="searchInputShow">
+          <app-svg-icon class="navbar-search-icon"
+            [draw]="searchIconDraw"
+            (click)="searchInputToggle()"></app-svg-icon>
+          <input class="navbar-search-input"
+            type="text"
+            placeholder="Search"
+            [@searchInputState]="searchInputState">
         </div>
 
         <div class="avatar navbar-avater">

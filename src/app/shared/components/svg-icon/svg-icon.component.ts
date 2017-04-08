@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { SvgDraw } from './svg-draw';
+export class SvgDraw {
+  constructor(private size: number, private viewbox: string, private path: string) { }
+}
 
 @Component({
   selector: 'app-svg-icon',
