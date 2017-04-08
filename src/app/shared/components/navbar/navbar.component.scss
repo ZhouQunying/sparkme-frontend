@@ -46,18 +46,9 @@ $navbar-height: 65px;
   margin: $search-margin;
   line-height: $navbar-height - $search-margin * 2;
   float: left;
-
-  input {
-    width: 200px;
-    height: 2em;
-    line-height: 2em;
-    font-size: 14px;
-    border: none;
-    @include reset-focus;
-  }
 }
 
-.svg-icon {
+.navbar-search-icon {
   // @include transition-duration(.1s);
   transition: fill .1s;
   fill: rgba(0, 0, 0, .5);
@@ -69,6 +60,15 @@ $navbar-height: 65px;
   svg {
     line-height: 45px;
   }
+}
+
+.navbar-search-input {
+  width: 200px;
+  height: 2em;
+  line-height: 2em;
+  font-size: 14px;
+  border: none;
+  @include reset-focus;
 }
 
 .navbar-avater {
