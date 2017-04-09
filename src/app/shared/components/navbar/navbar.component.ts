@@ -8,12 +8,8 @@ import { SvgDraw } from '../svg-icon/svg-icon.component';
   styleUrls: ['./navbar.component.scss'],
   animations: [
     trigger('searchInputState', [
-      state('inactive', style({
-        width: '0',
-      })),
-      state('active', style({
-        width: '*',
-      })),
+      state('inactive', style({width: '0', })),
+      state('active', style({width: '*', })),
       transition('inactive <=> active', animate('200ms ease-out'))
     ])
   ]
