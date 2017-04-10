@@ -13,6 +13,8 @@
           <input class="navbar-search-input"
             type="text"
             placeholder="Search"
+            #searchInput
+            (blur)="searchInputOnBlur($event.target.value)"
             [@searchInputState]="searchInputState">
         </div>
 
