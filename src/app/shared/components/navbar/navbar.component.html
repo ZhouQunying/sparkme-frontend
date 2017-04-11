@@ -14,7 +14,8 @@
             type="text"
             placeholder="Search"
             #searchInput
-            (blur)="searchInputOnBlur($event.target.value)"
+            (keyup.enter)="searchInputOnEnter()"
+            (blur)="searchInputOnBlur()"
             [@searchInputState]="searchInputState">
         </div>
 
