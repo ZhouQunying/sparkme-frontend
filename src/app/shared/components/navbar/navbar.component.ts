@@ -30,7 +30,11 @@ export class NavbarComponent implements OnInit {
 
   private searchInputToggle() {
     if (this.searchInputState === 'active') {
-      this.searchInputInactive();
+      if (!this.searchInput.value.trim()) {
+        this.searchInputInactive();
+      } else {
+        this.searchWithPopup();
+      }
     } else {
       this.searchInputState = 'active';
       this.searchInput.focus();
@@ -44,11 +48,17 @@ export class NavbarComponent implements OnInit {
   }
 
   private searchInputOnEnter() {
-    console.log(this.searchInput.value);
+    if (this.searchInput.value.trim()) {
+      this.searchWithPopup();
+    }
   }
 
   private searchInputInactive() {
     this.searchInputState = 'inactive';
     this.searchInput.value = '';
+  }
+
+  private searchWithPopup() {
+    console.log(this.searchInput.value, 'With popup');
   }
 }
