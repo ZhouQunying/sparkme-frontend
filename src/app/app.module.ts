@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileModule } from './profile/profile.module';
+
+import { ViewportService } from './shared/services/viewport/viewport.service';
+
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
 
@@ -25,7 +28,7 @@ import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.componen
     AppRoutingModule,
     ProfileModule
   ],
-  providers: [],
+  providers: [ViewportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

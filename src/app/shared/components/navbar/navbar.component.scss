@@ -21,6 +21,8 @@ $navbar-height: 65px;
   @include main-max-width;
   height: 100%;
   margin: 0 auto;
+  padding-left: $main-padding;
+  padding-right: $main-padding;
 }
 
 .navbar-logo {
