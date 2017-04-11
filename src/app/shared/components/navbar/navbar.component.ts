@@ -50,6 +50,7 @@ export class NavbarComponent implements OnInit {
       }
     } else {
       // Todo: link to search page
+      console.log(this.searchInput.value, 'With search page');
     }
   }
 
@@ -71,6 +72,7 @@ export class NavbarComponent implements OnInit {
   }
 
   private searchWithPopup() {
+    // Todo: result with popup
     console.log(this.searchInput.value, 'With popup');
   }
 }
