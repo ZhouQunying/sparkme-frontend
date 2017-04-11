@@ -14,7 +14,7 @@ export class SvgDraw {
 })
 export class SvgIconComponent implements OnInit {
 
-  @Input() draw: SvgDraw;
+  @Input() private draw: SvgDraw;
 
   constructor() { }
 
