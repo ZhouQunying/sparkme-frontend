@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavbarComponent } from './navbar.component';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
+
+import { ViewportService } from '../../services/viewport/viewport.service';
+
+import { SvgDraw } from '../svg-icon/svg-draw';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -8,7 +14,12 @@ describe('NavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      imports: [BrowserAnimationsModule],
+      declarations: [
+        NavbarComponent,
+        SvgIconComponent
+      ],
+      providers: [ViewportService]
     })
     .compileComponents();
   }));
@@ -21,5 +32,9 @@ describe('NavbarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have searchIconDraw instanceof SvgDraw', () => {
+    expect(component.searchIconDraw instanceof SvgDraw).toBeTruthy();
   });
 });
