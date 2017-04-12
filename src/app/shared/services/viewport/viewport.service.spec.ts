@@ -12,4 +12,10 @@ describe('ViewportService', () => {
   it('should ...', inject([ViewportService], (service: ViewportService) => {
     expect(service).toBeTruthy();
   }));
+
+  describe('#getWindowWidth()', () => {
+    it('should return current window width', inject([ViewportService], (service: ViewportService) => {
+      expect(service.getWindowWidth()).toBeTruthy();
+    }));
+  });
 });

@@ -5,7 +5,7 @@ export class ViewportService {
 
   constructor() { }
 
-  public getWindowWidth() {
+  getWindowWidth(): number {
     return window.innerWidth
       || document.documentElement.clientWidth
       || document.body.clientWidth;

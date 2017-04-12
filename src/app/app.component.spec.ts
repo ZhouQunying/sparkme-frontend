@@ -18,7 +18,7 @@ describe('AppComponent', () => {
         NavbarComponent,
         SvgIconComponent
       ],
-      providers: [ ViewportService ]
+      providers: [ViewportService]
     }).compileComponents();
   }));
 
