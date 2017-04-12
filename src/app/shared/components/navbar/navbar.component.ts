@@ -55,7 +55,7 @@ export class NavbarComponent implements OnInit {
       }
     } else {
       // Todo: link to search page
-      console.log(this.searchInput.value, 'Link to search page');
+      console.log(this.searchInput.value, 'With search page');
     }
   }
 
