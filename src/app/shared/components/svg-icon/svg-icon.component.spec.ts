@@ -17,8 +17,12 @@ describe('SvgIconComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SvgIconComponent);
     component = fixture.componentInstance;
+    component.draw = new SvgDraw({
+      path: ''
+    });
     fixture.detectChanges();
   });
+
 
   it('should create', () => {
     expect(component).toBeTruthy();
