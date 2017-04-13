@@ -12,12 +12,16 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
 
 import { ViewportService } from './shared/services/viewport/viewport.service';
+import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
+import { DropdownDirective } from './shared/components/dropdown/dropdown.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    DropdownComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
