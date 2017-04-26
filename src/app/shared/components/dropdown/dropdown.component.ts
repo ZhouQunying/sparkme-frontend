@@ -11,11 +11,11 @@ import { DropdownService } from './dropdown.service';
 export class DropdownComponent implements OnInit, OnDestroy {
 
   dropdownSubscription: Subscription;
-  toggle: boolean;
+  showDropdown: boolean;
 
   constructor(private dropdownService: DropdownService) {
-    this.dropdownSubscription = dropdownService.dropdownToggled$.subscribe(toggle => {
-      this.toggle = toggle;
+    this.dropdownSubscription = dropdownService.dropdownToggled$.subscribe(showDropdown => {
+      this.showDropdown = showDropdown;
     });
   }
 
