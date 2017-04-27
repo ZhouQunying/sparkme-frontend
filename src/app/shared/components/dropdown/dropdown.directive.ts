@@ -1,12 +1,15 @@
-import { Directive, Input, Renderer2, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Directive, Input, Renderer2, HostListener, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { DropdownService } from './dropdown.service';
 
 @Directive({
-  selector: '[appDropdown]'
+  selector: '[appDropdown]',
+  host: {
+    '[style.position]': '"relative"'
+  }
 })
-export class DropdownDirective implements OnInit, OnDestroy {
+export class DropdownDirective implements OnDestroy {
 
   @Input('appDropdown') appDropdownName: string;
 
@@ -19,12 +22,9 @@ export class DropdownDirective implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {
-    console.log(this.appDropdownName)
-  }
-
   @HostListener('click') onClick() {
     this.dropdownService.dropdownToggle(this.showDropdown);
+    console.log(this.appDropdownName);
   }
 
   ngOnDestroy() {

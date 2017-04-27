@@ -1,6 +1,5 @@
 @import "~compass-mixins/lib/compass/reset/utilities";
 @import "~compass-mixins/lib/compass/css3/user-interface";
-@import "~compass-mixins/lib/compass/utilities/general/clearfix";
 @import "~compass-mixins/lib/compass/typography/links";
 // @import "~compass-mixins/lib/compass/css3/transition";
 
@@ -39,7 +38,6 @@ $navbar-height: 65px;
 
 .navbar-user {
   float: right;
-  @include clearfix;
 }
 
 .navbar-search {
@@ -76,11 +74,14 @@ $navbar-height: 65px;
 .navbar-avater {
   $avatar-size: 32px;
 
-  position: relative;
-  top: -50%;
   width: $avatar-size;
   height: $avatar-size;
   margin-top: ($navbar-height - $avatar-size) / 2;
   float: right;
-  cursor: pointer;
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
 }
