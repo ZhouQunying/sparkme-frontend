@@ -10,7 +10,7 @@ export class DropdownService {
 
   constructor() { }
 
-  dropdownToggle(toggle: boolean) {
-    this.dropdownToggledSource.next(!toggle);
+  dropdownToggle(showDropdown: boolean) {
+    this.dropdownToggledSource.next(!showDropdown);
   }
 }

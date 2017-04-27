@@ -4,24 +4,27 @@ import { Subscription } from 'rxjs/Subscription';
 import { DropdownService } from './dropdown.service';
 
 @Directive({
-  selector: '[appDropdown]'
+  selector: '[appDropdown]',
+  host: {
+    '[style.position]': '"relative"'
+  }
 })
 export class DropdownDirective implements OnDestroy {
 
-  @Input() appDropdown: string;
+  @Input('appDropdown') appDropdownName: string;
 
   dropdownSubscription: Subscription;
-  toggle: boolean = false;
+  showDropdown: boolean = false;
 
   constructor(private renderer: Renderer2, private dropdownService: DropdownService) {
-    this.dropdownSubscription = dropdownService.dropdownToggled$.subscribe(toggle => {
-      this.toggle = toggle;
+    this.dropdownSubscription = dropdownService.dropdownToggled$.subscribe(showDropdown => {
+      this.showDropdown = showDropdown;
     });
   }
 
   @HostListener('click') onClick() {
-    this.dropdownService.dropdownToggle(this.toggle);
-    console.log('click!');
+    this.dropdownService.dropdownToggle(this.showDropdown);
+    console.log(this.appDropdownName);
   }
 
   ngOnDestroy() {
