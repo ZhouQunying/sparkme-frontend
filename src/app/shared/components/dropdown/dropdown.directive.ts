@@ -5,9 +5,9 @@ import { DropdownService } from './dropdown.service';
 
 @Directive({
   selector: '[appDropdown]',
-  host: {
-    '[style.position]': '"relative"'
-  }
+  // host: {
+  //   '[style.position]': '"relative"'
+  // }
 })
 export class DropdownDirective implements OnDestroy {
 
