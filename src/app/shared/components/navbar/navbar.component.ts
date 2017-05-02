@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
       11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z`
   });
   searchInputState: string = 'inactive';
-  searchInput: any;
+  searchInput: HTMLInputElement;
 
   constructor(private viewportService: ViewportService) { }
 
@@ -38,7 +38,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.searchInput = <HTMLScriptElement>this.searchInputEl.nativeElement;
+    this.searchInput = this.searchInputEl.nativeElement;
   }
 
   searchInputToggle() {
