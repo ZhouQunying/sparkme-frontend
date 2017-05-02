@@ -1,13 +1,10 @@
-import { Directive, Input, Renderer2, HostListener, OnDestroy } from '@angular/core';
+import { Directive, Input, HostListener, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { DropdownService } from './dropdown.service';
 
 @Directive({
   selector: '[appDropdown]',
-  host: {
-    '[style.position]': '"relative"'
-  }
 })
 export class DropdownDirective implements OnDestroy {
 
@@ -16,7 +13,8 @@ export class DropdownDirective implements OnDestroy {
   dropdownSubscription: Subscription;
   showDropdown: boolean = false;
 
-  constructor(private renderer: Renderer2, private dropdownService: DropdownService) {
+  constructor(private dropdownService: DropdownService) {
+    // Subscribe
     this.dropdownSubscription = dropdownService.dropdownToggled$.subscribe(showDropdown => {
       this.showDropdown = showDropdown;
     });
