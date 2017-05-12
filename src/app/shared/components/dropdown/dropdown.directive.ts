@@ -1,31 +1,25 @@
-import { Directive, Input, HostListener, OnDestroy } from '@angular/core';
+import { Directive, Input, OnInit, HostListener } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { DropdownService } from './dropdown.service';
+import { DropdownComponent } from './dropdown.component';
 
 @Directive({
   selector: '[appDropdown]',
 })
-export class DropdownDirective implements OnDestroy {
+export class DropdownDirective implements OnInit {
 
-  @Input('appDropdown') appDropdownName: string;
+  dropdownEl: HTMLElement;
 
-  dropdownSubscription: Subscription;
-  showDropdown: boolean = false;
+  @Input('appDropdown') dropdownComponent: DropdownComponent;
 
-  constructor(private dropdownService: DropdownService) {
-    // Subscribe
-    this.dropdownSubscription = dropdownService.dropdownToggled$.subscribe(showDropdown => {
-      this.showDropdown = showDropdown;
-    });
+  constructor() { }
+
+  ngOnInit() {
+    this.dropdownEl = this.dropdownComponent.el.nativeElement;
+    this.dropdownEl.hidden = true;
   }
 
   @HostListener('click') onClick() {
-    this.dropdownService.dropdownToggle(this.showDropdown);
-    console.log(this.appDropdownName);
-  }
-
-  ngOnDestroy() {
-    this.dropdownSubscription.unsubscribe();
+    this.dropdownEl.hidden = !this.dropdownEl.hidden;
   }
 }

@@ -19,12 +19,12 @@
             [@searchInputState]="searchInputState">
         </div>
 
-        <div class="navbar-avater" [appDropdown]="'avaterMenu'">
+        <div class="navbar-avater" [appDropdown]="avaterMenu">
           <div class="avatar">
             <img src="https://cdn-images-1.medium.com/fit/c/64/64/1*TEizCLUW2u5y83tEfgXncw.jpeg"/>
           </div>
 
-          <app-dropdown avaterMenu>
+          <app-dropdown #avaterMenu>
             <h1>Hello</h1>
           </app-dropdown>
         </div>
