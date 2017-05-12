@@ -2,14 +2,12 @@ import { Component, OnInit, trigger, state, style, transition,
   animate, ViewChild, ElementRef, HostListener } from '@angular/core';
 
 import { ViewportService } from '../../services/viewport/viewport.service';
-import { DropdownService } from '../dropdown/dropdown.service';
 import { SvgDraw } from '../svg-icon/svg-draw';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  providers: [DropdownService],
   animations: [
     trigger('searchInputState', [
       state('inactive', style({width: '0', })),
