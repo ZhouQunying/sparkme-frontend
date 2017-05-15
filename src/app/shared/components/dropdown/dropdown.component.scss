@@ -1,4 +1,38 @@
+@import "~compass-mixins/lib/compass/css3/border-radius";
+@import "~compass-mixins/lib/compass/css3/transform";
+// @import "~compass-mixins/lib/compass/css3/box-shadow";
+
+@import "../../styles/valiables";
+
 :host {
   position: absolute;
   top: 100%;
+  left: -50%;
+}
+
+.app-dropdown {
+  $background-color: #fff;
+
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: $background-color;
+  border: 1px solid $theme-border-color;
+  @include border-radius(4px);
+
+  &:after {
+    $point-size: 10px;
+
+    display: block;
+    position: absolute;
+    top: -$point-size / 2;
+    left: calc(50% - #{$point-size / 2});
+    content: '';
+    width: $point-size;
+    height: $point-size;
+    @include transform(rotate(45deg));
+    // @include box-shadow(-1px -1px 0 0px $theme-border-color);
+    box-shadow: -1px -1px 0 0px $theme-border-color;
+    background-color: $background-color;
+  }
 }
