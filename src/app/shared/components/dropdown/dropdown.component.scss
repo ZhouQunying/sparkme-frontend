@@ -7,7 +7,6 @@
 :host {
   position: absolute;
   top: 100%;
-  left: -50%;
 }
 
 .app-dropdown {
@@ -28,10 +27,15 @@
     content: '';
     width: $point-size;
     height: $point-size;
+    background-color: $background-color;
     @include transform(rotate(45deg));
     // @include box-shadow(-1px -1px 0 0px $theme-border-color);
     box-shadow: -1px -1px 0 0px $theme-border-color;
-    background-color: $background-color;
     z-index: 0;
+  }
+
+  /deep/ > :nth-child(n) {
+    position: relative;
+    z-index: 1;
   }
 }
