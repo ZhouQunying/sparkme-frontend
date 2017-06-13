@@ -8,11 +8,14 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class DropdownComponent implements OnInit {
 
-  constructor(public el: ElementRef) {
-    // Set parent element css position to relative
-    (<HTMLElement>this.el.nativeElement.parentNode).style.position = 'relative';
-  }
+  constructor(public el: ElementRef) { }
 
   ngOnInit() {
+    const parentNode: HTMLElement = this.el.nativeElement.parentNode;
+
+    // Set parent element css position to relative
+    parentNode.style.position = 'relative';
+    // Set css position of container element
+    (<HTMLElement>this.el.nativeElement.querySelector('.app-dropdown')).style.left = `calc(-50% + ${parentNode.clientWidth / 2}px)`;
   }
 }
