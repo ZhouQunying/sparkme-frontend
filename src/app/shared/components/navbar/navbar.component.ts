@@ -2,7 +2,6 @@ import { Component, OnInit, trigger, state, style, transition,
   animate, ViewChild, ElementRef, HostListener } from '@angular/core';
 
 import { ViewportService } from '../../services/viewport/viewport.service';
-import { SvgDraw } from '../svg-icon/svg-draw';
 
 @Component({
   selector: 'app-navbar',
@@ -18,10 +17,6 @@ import { SvgDraw } from '../svg-icon/svg-draw';
 })
 export class NavbarComponent implements OnInit {
 
-  searchIconDraw: SvgDraw = new SvgDraw({
-    path: `M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5
-      11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z`
-  });
   searchInputState: string = 'inactive';
   searchInput: HTMLInputElement;
 

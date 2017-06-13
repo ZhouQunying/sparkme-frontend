@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { SvgDraw } from './svg-draw';
-
 @Component({
   selector: 'app-svg-icon',
   templateUrl: './svg-icon.component.html',
@@ -9,7 +7,7 @@ import { SvgDraw } from './svg-draw';
 })
 export class SvgIconComponent implements OnInit {
 
-  @Input() draw: SvgDraw;
+  @Input() svg: String;
 
   constructor() { }
 

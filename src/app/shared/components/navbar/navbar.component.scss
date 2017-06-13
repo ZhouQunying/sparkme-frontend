@@ -41,32 +41,29 @@ $navbar-height: 65px;
 }
 
 .navbar-search {
-  $search-margin: 10px;
-
-  margin: $search-margin;
-  line-height: $navbar-height - $search-margin * 2;
+  height: $navbar-height;
+  margin-right: 10px;
+  margin-left: 10px;
+  line-height: $navbar-height;
   float: left;
 }
 
 .navbar-search-icon {
+  font-size: 1.5em;
   // @include transition-duration(.1s);
   transition: fill .1s;
-  fill: rgba(0, 0, 0, .5);
 
   &:hover {
     fill: rgba(0, 0, 0, 1);
-  }
-
-  svg {
-    line-height: 45px;
   }
 }
 
 .navbar-search-input {
   width: 200px;
-  height: 2em;
-  line-height: 2em;
-  font-size: 14px;
+  height: $navbar-height;
+  box-sizing: border-box;
+  vertical-align: top;
+  font-size: .8em;
   border: none;
   @include reset-focus;
 }

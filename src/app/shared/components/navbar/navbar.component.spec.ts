@@ -6,8 +6,6 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 import { ViewportService } from '../../services/viewport/viewport.service';
 
-import { SvgDraw } from '../svg-icon/svg-draw';
-
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
@@ -32,9 +30,5 @@ describe('NavbarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should have searchIconDraw instanceof SvgDraw', () => {
-    expect(component.searchIconDraw instanceof SvgDraw).toBeTruthy();
   });
 });
