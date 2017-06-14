@@ -27,8 +27,8 @@ input {
 }
 
 .avatar {
-  overflow: hidden;
   @include border-radius(50%);
+  overflow: hidden;
 
   img {
     width: 100%;

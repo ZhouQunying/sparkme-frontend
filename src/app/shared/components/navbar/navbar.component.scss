@@ -9,18 +9,18 @@
 $navbar-height: 65px;
 
 .navbar {
+  @include user-select(none);
   width: 100%;
   height: $navbar-height;
   background-color: hsl(0, 0%, 100%);
-  @include user-select(none);
 }
 
 .navbar-container {
+  @include main-max-width();
   height: 100%;
   margin: 0 auto;
   padding-left: $main-padding;
   padding-right: $main-padding;
-  @include main-max-width();
 }
 
 .navbar-logo {
@@ -58,13 +58,13 @@ $navbar-height: 65px;
 }
 
 .navbar-search-input {
+  @include reset-focus;
   width: 200px;
   height: $navbar-height;
   box-sizing: border-box;
   vertical-align: top;
   font-size: .8em;
   border: 0;
-  @include reset-focus;
 }
 
 .navbar-avater {
