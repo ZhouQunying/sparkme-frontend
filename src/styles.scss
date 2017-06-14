@@ -1,17 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~compass-mixins/lib/compass/reset/utilities";
-@import "~compass-mixins/lib/compass/css3/user-interface";
-@import "~compass-mixins/lib/compass/css3/border-radius";
+@import '~compass-mixins/lib/compass/reset/utilities';
+@import '~compass-mixins/lib/compass/css3/user-interface';
+@import '~compass-mixins/lib/compass/css3/border-radius';
 
-@import "./app/shared/styles/valiables";
-@import "./app/shared/styles/mixins";
+@import 'assets/styles/valiables';
+@import 'assets/styles/mixins';
 
 @include global-reset;
 @include reset-html5;
 
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   @include theme-background-color;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 
 * {

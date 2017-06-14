@@ -1,8 +1,8 @@
-@import "~compass-mixins/lib/compass/css3/border-radius";
-@import "~compass-mixins/lib/compass/css3/transform";
-// @import "~compass-mixins/lib/compass/css3/box-shadow";
+@import '~compass-mixins/lib/compass/css3/border-radius';
+@import '~compass-mixins/lib/compass/css3/transform';
+// @import '~compass-mixins/lib/compass/css3/box-shadow';
 
-@import "../../styles/valiables";
+@import 'assets/styles/valiables';
 
 :host {
   position: absolute;
@@ -10,16 +10,18 @@
 }
 
 .app-dropdown {
-  $background-color: #fff;
+  $background-color: hsl(0, 0%, 100%);
   $point-size: 10px;
 
+  @include border-radius(4px);
   position: relative;
   margin-top: $point-size;
   background-color: $background-color;
   border: 1px solid $theme-border-color;
-  @include border-radius(4px);
 
   &:after {
+    // @include box-shadow(-1px -1px 0 0px $theme-border-color);
+    @include transform(rotate(45deg));
     display: block;
     position: absolute;
     top: -$point-size / 2;
@@ -28,10 +30,8 @@
     width: $point-size;
     height: $point-size;
     background-color: $background-color;
-    @include transform(rotate(45deg));
-    // @include box-shadow(-1px -1px 0 0px $theme-border-color);
-    box-shadow: -1px -1px 0 0px $theme-border-color;
     z-index: 0;
+    box-shadow: -1px -1px 0 0px $theme-border-color;
   }
 
   /deep/ > :nth-child(n) {

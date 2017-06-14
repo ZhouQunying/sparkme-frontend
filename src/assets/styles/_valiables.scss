@@ -1,11 +1,11 @@
 // Theme color
-$theme-color: #234b59;
+$theme-color: hsl(196, 44%, 24%);
 
 // Theme background color
-$theme-background-color: #fafafa;
+$theme-background-color: hsl(0, 0%, 98%);
 
 // Theme border color
-$theme-border-color: rgba(0, 0, 0, .2);
+$theme-border-color: hsla(0, 0%, 0%, .2);
 
 // Main content max width
 $main-max-width: 1000px;
@@ -14,7 +14,7 @@ $main-max-width: 1000px;
 $main-padding: 20px;
 
 // Place holder color
-$placeholder-color: #bfbfbf;
+$placeholder-color: hsl(0, 0%, 75%);
 
 // Input text color
-$input-color: rgba(0, 0, 0, .8);
+$input-color: hsla(0, 0%, 0%, .8);

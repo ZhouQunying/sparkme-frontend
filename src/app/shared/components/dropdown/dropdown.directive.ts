@@ -1,4 +1,4 @@
-import { Directive, Input, OnInit, HostListener } from '@angular/core';
+import { Directive, Input, OnInit, ElementRef, HostListener } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { DropdownComponent } from './dropdown.component';
@@ -12,7 +12,7 @@ export class DropdownDirective implements OnInit {
 
   @Input('appDropdown') dropdownComponent: DropdownComponent;
 
-  constructor() { }
+  constructor(public el: ElementRef) { }
 
   ngOnInit() {
     this.dropdownEl = this.dropdownComponent.el.nativeElement;
@@ -21,5 +21,11 @@ export class DropdownDirective implements OnInit {
 
   @HostListener('click') onClick() {
     this.dropdownEl.hidden = !this.dropdownEl.hidden;
+  }
+
+  @HostListener('document:click', ['$event']) onBesidesClick() {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.dropdownEl.hidden = true;
+    }
   }
 }

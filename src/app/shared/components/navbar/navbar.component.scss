@@ -1,19 +1,18 @@
-@import "~compass-mixins/lib/compass/reset/utilities";
-@import "~compass-mixins/lib/compass/css3/user-interface";
-@import "~compass-mixins/lib/compass/typography/links";
-// @import "~compass-mixins/lib/compass/css3/transition";
+@import '~compass-mixins/lib/compass/reset/utilities';
+@import '~compass-mixins/lib/compass/css3/user-interface';
+@import '~compass-mixins/lib/compass/typography/links';
+// @import '~compass-mixins/lib/compass/css3/transition';
 
-@import "../../styles/valiables";
-@import "../../styles/mixins";
+@import 'assets/styles/valiables';
+@import 'assets/styles/mixins';
 
 $navbar-height: 65px;
 
 .navbar {
   @include user-select(none);
-
   width: 100%;
   height: $navbar-height;
-  background-color: #fff;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .navbar-container {
@@ -49,23 +48,24 @@ $navbar-height: 65px;
 }
 
 .navbar-search-icon {
-  font-size: 1.5em;
   // @include transition-duration(.1s);
+  font-size: 1.5em;
+  fill: hsla(0, 0%, 0%, .5);
   transition: fill .1s;
 
-  &:hover {
-    fill: rgba(0, 0, 0, 1);
+  &:hover .svg-icon{
+    fill: hsla(0, 0%, 0%, .1);
   }
 }
 
 .navbar-search-input {
+  @include reset-focus;
   width: 200px;
   height: $navbar-height;
   box-sizing: border-box;
   vertical-align: top;
   font-size: .8em;
-  border: none;
-  @include reset-focus;
+  border: 0;
 }
 
 .navbar-avater {

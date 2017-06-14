@@ -7,21 +7,23 @@
 
       <div class="navbar-user">
         <div class="navbar-search">
-          <app-svg-icon class="navbar-search-icon"
-            [svg]="'icon-search'"
+          <app-svg-icon
+            class="navbar-search-icon"
+            [svg]="'#icon-search'"
             (click)="searchInputToggle()"></app-svg-icon>
-          <input class="navbar-search-input"
+          <input
+            class="navbar-search-input"
             type="text"
             placeholder="Search"
             #searchInput
+            [@searchInputState]="searchInputState"
             (keyup.enter)="searchInputOnEnter()"
-            (blur)="searchInputOnBlur()"
-            [@searchInputState]="searchInputState">
+            (blur)="searchInputOnBlur()">
         </div>
 
         <div class="navbar-avater" [appDropdown]="avaterMenu">
           <div class="avatar">
-            <img src="https://cdn-images-1.medium.com/fit/c/64/64/1*TEizCLUW2u5y83tEfgXncw.jpeg"/>
+            <img src="https://cdn-images-1.medium.com/fit/c/64/64/1*TEizCLUW2u5y83tEfgXncw.jpeg">
           </div>
 
           <app-dropdown #avaterMenu>
