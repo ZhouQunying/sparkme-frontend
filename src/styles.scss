@@ -3,15 +3,14 @@
 @import '~compass-mixins/lib/compass/css3/user-interface';
 @import '~compass-mixins/lib/compass/css3/border-radius';
 
-@import 'assets/styles/valiables';
-@import 'assets/styles/mixins';
+@import 'src/assets/styles/abstracts/valiables';
 
 @include global-reset;
 @include reset-html5;
 
 body {
-  @include theme-background-color;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background-color: $main-background-color;
 }
 
 * {
@@ -23,7 +22,7 @@ body {
 }
 
 input {
-  @include input-color;
+  color: $input-color;
 }
 
 .avatar {

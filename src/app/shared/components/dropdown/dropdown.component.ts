@@ -15,6 +15,7 @@ export class DropdownComponent implements OnInit {
 
     // Set parent element css position to relative
     parentNode.style.position = 'relative';
+
     // Set css position of container element
     (<HTMLElement>this.el.nativeElement.querySelector('.app-dropdown')).style.left = `calc(-50% + ${parentNode.clientWidth / 2}px)`;
   }
