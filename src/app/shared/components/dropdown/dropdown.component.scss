@@ -2,7 +2,7 @@
 @import '~compass-mixins/lib/compass/css3/transform';
 // @import '~compass-mixins/lib/compass/css3/box-shadow';
 
-@import 'assets/styles/valiables';
+@import 'src/assets/styles/abstracts/valiables';
 
 :host {
   position: absolute;
@@ -17,10 +17,10 @@
   position: relative;
   margin-top: $point-size;
   background-color: $background-color;
-  border: 1px solid $theme-border-color;
+  border: 1px solid $main-border-color;
 
-  &:after {
-    // @include box-shadow(-1px -1px 0 0px $theme-border-color);
+  &::after {
+    // @include box-shadow(-1px -1px 0 0 $main-border-color);
     @include transform(rotate(45deg));
     display: block;
     position: absolute;
@@ -31,7 +31,7 @@
     height: $point-size;
     background-color: $background-color;
     z-index: 0;
-    box-shadow: -1px -1px 0 0px $theme-border-color;
+    box-shadow: -1px -1px 0 0 $main-border-color;
   }
 
   /deep/ > :nth-child(n) {
