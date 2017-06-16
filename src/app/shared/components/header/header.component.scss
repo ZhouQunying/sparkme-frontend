@@ -5,16 +5,16 @@
 
 @import 'src/assets/styles/abstracts/valiables';
 
-$navbar-height: 65px;
+$header-height: 65px;
 
-.navbar {
+.header {
   @include user-select(none);
   width: 100%;
-  height: $navbar-height;
+  height: $header-height;
   background-color: hsl(0, 0%, 100%);
 }
 
-.navbar-container {
+.header-container {
   height: 100%;
   max-width: $main-max-width;
   margin: 0 auto;
@@ -22,9 +22,9 @@ $navbar-height: 65px;
   padding-right: $main-padding;
 }
 
-.navbar-logo {
+.header-logo {
   float: left;
-  line-height: $navbar-height;
+  line-height: $header-height;
   font-size: 1.75em;
   font-weight: 200;
 
@@ -34,19 +34,19 @@ $navbar-height: 65px;
   }
 }
 
-.navbar-user {
+.header-user {
   float: right;
 }
 
-.navbar-search {
+.header-search {
   float: left;
-  height: $navbar-height;
+  height: $header-height;
   margin-right: 10px;
   margin-left: 10px;
-  line-height: $navbar-height;
+  line-height: $header-height;
 }
 
-.navbar-search-icon {
+.header-search-icon {
   // @include transition-duration(.1s);
   font-size: 1.5em;
   fill: hsla(0, 0%, 0%, .5);
@@ -57,23 +57,23 @@ $navbar-height: 65px;
   }
 }
 
-.navbar-search-input {
+.header-search-input {
   @include reset-focus;
   box-sizing: border-box;
   width: 200px;
-  height: $navbar-height;
+  height: $header-height;
   vertical-align: top;
   border: 0;
   font-size: .8em;
 }
 
-.navbar-avater {
+.header-avater {
   $avatar-size: 32px;
 
   float: right;
   width: $avatar-size;
   height: $avatar-size;
-  margin-top: ($navbar-height - $avatar-size) / 2;
+  margin-top: ($header-height - $avatar-size) / 2;
 
   .avatar {
     width: 100%;

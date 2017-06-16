@@ -4,9 +4,9 @@ import { Component, OnInit, trigger, state, style, transition,
 import { ViewportService } from '../../services/viewport/viewport.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
   animations: [
     trigger('searchInputState', [
       state('inactive', style({width: '0', })),
@@ -15,7 +15,7 @@ import { ViewportService } from '../../services/viewport/viewport.service';
     ])
   ]
 })
-export class NavbarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   searchInputState: string = 'inactive';
   searchInput: HTMLInputElement;

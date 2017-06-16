@@ -2,7 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
 
 import { ViewportService } from './shared/services/viewport/viewport.service';
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        NavbarComponent,
+        HeaderComponent,
         SvgIconComponent
       ],
       providers: [ViewportService]
