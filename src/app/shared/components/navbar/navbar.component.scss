@@ -23,8 +23,8 @@ $navbar-height: 65px;
 }
 
 .navbar-logo {
-  line-height: $navbar-height;
   float: left;
+  line-height: $navbar-height;
   font-size: 1.75em;
   font-weight: 200;
 
@@ -39,11 +39,11 @@ $navbar-height: 65px;
 }
 
 .navbar-search {
+  float: left;
   height: $navbar-height;
   margin-right: 10px;
   margin-left: 10px;
   line-height: $navbar-height;
-  float: left;
 }
 
 .navbar-search-icon {
@@ -59,21 +59,21 @@ $navbar-height: 65px;
 
 .navbar-search-input {
   @include reset-focus;
+  box-sizing: border-box;
   width: 200px;
   height: $navbar-height;
-  box-sizing: border-box;
   vertical-align: top;
-  font-size: .8em;
   border: 0;
+  font-size: .8em;
 }
 
 .navbar-avater {
   $avatar-size: 32px;
 
+  float: right;
   width: $avatar-size;
   height: $avatar-size;
   margin-top: ($navbar-height - $avatar-size) / 2;
-  float: right;
 
   .avatar {
     width: 100%;

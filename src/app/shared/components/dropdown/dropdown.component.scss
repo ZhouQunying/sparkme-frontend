@@ -16,8 +16,8 @@
   @include border-radius(4px);
   position: relative;
   margin-top: $point-size;
-  background-color: $background-color;
   border: 1px solid $main-border-color;
+  background-color: $background-color;
 
   &::after {
     // @include box-shadow(-1px -1px 0 0 $main-border-color);
@@ -26,12 +26,12 @@
     position: absolute;
     top: -$point-size / 2;
     left: calc(50% - #{$point-size / 2});
-    content: '';
+    z-index: 0;
     width: $point-size;
     height: $point-size;
-    background-color: $background-color;
-    z-index: 0;
     box-shadow: -1px -1px 0 0 $main-border-color;
+    background-color: $background-color;
+    content: '';
   }
 
   /deep/ > :nth-child(n) {
