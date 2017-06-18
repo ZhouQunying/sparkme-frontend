@@ -1,0 +1,11 @@
+@import '~compass-mixins/lib/compass/css3/border-radius';
+
+.avatar {
+  @include border-radius(50%);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
