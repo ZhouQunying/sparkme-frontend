@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './header.component';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
+import { DropdownComponent } from '../dropdown/dropdown.component';
 
 import { ViewportService } from '../../services/viewport/viewport.service';
 
@@ -15,7 +16,8 @@ describe('HeaderComponent', () => {
       imports: [BrowserAnimationsModule],
       declarations: [
         HeaderComponent,
-        SvgIconComponent
+        SvgIconComponent,
+        DropdownComponent
       ],
       providers: [ViewportService]
     })

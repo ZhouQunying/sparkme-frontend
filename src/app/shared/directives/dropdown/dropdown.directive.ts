@@ -12,7 +12,7 @@ export class DropdownDirective implements OnInit {
 
   @Input('appDropdown') dropdownComponent: DropdownComponent;
 
-  constructor(public el?: ElementRef) { }
+  constructor(public el: ElementRef) { }
 
   ngOnInit() {
     this.dropdownEl = this.dropdownComponent.el.nativeElement;
