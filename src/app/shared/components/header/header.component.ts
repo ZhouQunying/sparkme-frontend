@@ -24,14 +24,14 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('searchInput') searchInputEl: ElementRef;
 
+  ngOnInit() {
+    this.searchInput = this.searchInputEl.nativeElement;
+  }
+
   @HostListener('window:resize', ['$event']) onResize(event) {
     if (event.target.innerWidth < 1000) {
       this.searchInputState = 'inactive';
     }
-  }
-
-  ngOnInit() {
-    this.searchInput = this.searchInputEl.nativeElement;
   }
 
   searchInputToggle() {
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
         this.searchInput.focus();
       }
     } else {
-      // Todo: link to search page
+      // TODO: link to search page
       console.log(this.searchInput.value, 'With search page');
     }
   }
@@ -72,7 +72,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchWithPopup() {
-    // Todo: search with popup
+    // TODO: search with popup
     console.log(this.searchInput.value, 'With popup');
   }
 }
