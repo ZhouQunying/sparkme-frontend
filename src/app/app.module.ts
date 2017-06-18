@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileModule } from './profile/profile.module';
 
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
 
 import { ViewportService } from './shared/services/viewport/viewport.service';
@@ -18,7 +18,7 @@ import { DropdownDirective } from './shared/components/dropdown/dropdown.directi
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    HeaderComponent,
     SvgIconComponent,
     DropdownComponent,
     DropdownDirective

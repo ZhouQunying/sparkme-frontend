@@ -1,18 +1,18 @@
-<div class="navbar">
-  <div class="navbar-container">
-    <div class="navbar-major">
-      <div class="navbar-logo">
+<header class="header">
+  <div class="header-container">
+    <div class="header-major">
+      <div class="header-logo">
         <a href="/">Sparkme</a>
       </div>
 
-      <div class="navbar-user">
-        <div class="navbar-search">
+      <div class="header-user">
+        <div class="header-search">
           <app-svg-icon
-            class="navbar-search-icon"
+            class="header-search-icon"
             [svg]="'#icon-search'"
             (click)="searchInputToggle()"></app-svg-icon>
           <input
-            class="navbar-search-input"
+            class="header-search-input"
             type="text"
             placeholder="Search"
             #searchInput
@@ -21,7 +21,7 @@
             (blur)="searchInputOnBlur()">
         </div>
 
-        <div class="navbar-avater" [appDropdown]="avaterMenu">
+        <div class="header-avater" [appDropdown]="avaterMenu">
           <div class="avatar">
             <img src="https://cdn-images-1.medium.com/fit/c/64/64/1*TEizCLUW2u5y83tEfgXncw.jpeg">
           </div>
@@ -33,6 +33,6 @@
       </div>
     </div>
 
-    <div class="navbar-minor"></div>
+    <nav class="header-minor"></nav>
   </div>
-</div>
+</header>

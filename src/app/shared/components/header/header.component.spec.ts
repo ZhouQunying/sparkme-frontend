@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NavbarComponent } from './navbar.component';
+import { HeaderComponent } from './header.component';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 
 import { ViewportService } from '../../services/viewport/viewport.service';
 
-describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule],
       declarations: [
-        NavbarComponent,
+        HeaderComponent,
         SvgIconComponent
       ],
       providers: [ViewportService]
@@ -23,7 +23,7 @@ describe('NavbarComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
