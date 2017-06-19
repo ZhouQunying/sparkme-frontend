@@ -13,6 +13,11 @@ describe('SvgIconComponent', () => {
     .compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SvgIconComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

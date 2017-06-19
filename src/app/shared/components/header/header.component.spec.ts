@@ -1,11 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ViewportService } from '../../services/viewport/viewport.service';
+
 import { HeaderComponent } from './header.component';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { DropdownComponent } from '../dropdown/dropdown.component';
 
-import { ViewportService } from '../../services/viewport/viewport.service';
+import { DropdownDirective } from '../../directives/dropdown/dropdown.directive';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -17,7 +19,8 @@ describe('HeaderComponent', () => {
       declarations: [
         HeaderComponent,
         SvgIconComponent,
-        DropdownComponent
+        DropdownComponent,
+        DropdownDirective
       ],
       providers: [ViewportService]
     })
