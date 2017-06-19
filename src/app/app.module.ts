@@ -13,7 +13,7 @@ import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.componen
 
 import { ViewportService } from './shared/services/viewport/viewport.service';
 import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
-import { DropdownDirective } from './shared/components/dropdown/dropdown.directive';
+import { DropdownDirective } from './shared/directives/dropdown/dropdown.directive';
 
 @NgModule({
   declarations: [

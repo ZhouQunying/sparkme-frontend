@@ -1,36 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~compass-mixins/lib/compass/reset/utilities';
-@import '~compass-mixins/lib/compass/css3/user-interface';
-@import '~compass-mixins/lib/compass/css3/border-radius';
-
 @import 'src/assets/styles/abstracts/valiables';
-
-@include global-reset;
-@include reset-html5;
+@import 'src/assets/styles/base/reset';
 
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   background-color: $main-background-color;
 }
 
-* {
+input {
+  color: $input-color;
+
   @include input-placeholder {
     color: $placeholder-color;
     font-style: italic;
     font-weight: 100;
-  }
-}
-
-input {
-  color: $input-color;
-}
-
-.avatar {
-  @include border-radius(50%);
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
   }
 }

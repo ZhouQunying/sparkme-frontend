@@ -4,6 +4,7 @@
 // @import '~compass-mixins/lib/compass/css3/transition';
 
 @import 'src/assets/styles/abstracts/valiables';
+@import 'src/assets/styles/components/avatar';
 
 $header-height: 65px;
 
@@ -52,8 +53,8 @@ $header-height: 65px;
   fill: hsla(0, 0%, 0%, .5);
   transition: fill .1s;
 
-  &:hover .svg-icon {
-    fill: hsla(0, 0%, 0%, .1);
+  &:hover {
+    fill: hsla(0, 0%, 0%, .7);
   }
 }
 

@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
+import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
 
 import { ViewportService } from './shared/services/viewport/viewport.service';
 
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         HeaderComponent,
-        SvgIconComponent
+        SvgIconComponent,
+        DropdownComponent
       ],
       providers: [ViewportService]
     }).compileComponents();

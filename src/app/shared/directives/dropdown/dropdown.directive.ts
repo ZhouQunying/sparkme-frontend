@@ -1,7 +1,7 @@
 import { Directive, Input, OnInit, ElementRef, HostListener } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { DropdownComponent } from './dropdown.component';
+import { DropdownComponent } from '../../components/dropdown/dropdown.component';
 
 @Directive({
   selector: '[appDropdown]',
