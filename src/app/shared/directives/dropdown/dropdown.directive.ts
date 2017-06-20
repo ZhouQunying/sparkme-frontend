@@ -2,17 +2,17 @@ import { Directive, Input, OnInit, ElementRef, HostListener } from '@angular/cor
 import { Subscription } from 'rxjs/Subscription';
 
 import { DropdownComponent } from '../../components/dropdown/dropdown.component';
+import { DropdownService } from '../../services/dropdown/dropdown.service';
 
 @Directive({
   selector: '[appDropdown]',
 })
 export class DropdownDirective implements OnInit {
 
+  @Input('appDropdown') dropdownComponent: DropdownComponent;
   dropdownEl: HTMLElement;
 
-  @Input('appDropdown') dropdownComponent: DropdownComponent;
-
-  constructor(public el: ElementRef) { }
+  constructor(public el: ElementRef, private dropdownService: DropdownService) { }
 
   ngOnInit() {
     this.dropdownEl = this.dropdownComponent.el.nativeElement;
@@ -21,6 +21,9 @@ export class DropdownDirective implements OnInit {
 
   @HostListener('click') onClick() {
     this.dropdownEl.hidden = !this.dropdownEl.hidden;
+
+    // Trigger stream of dropdown hidden state
+    this.dropdownService.toggleDropdown(this.dropdownEl.hidden);
   }
 
   @HostListener('document:click', ['$event']) onBesidesClick() {

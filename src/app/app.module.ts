@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileModule } from './profile/profile.module';
 
+import { ViewportService } from './shared/services/viewport/viewport.service';
+import { DropdownService } from './shared/services/dropdown/dropdown.service';
+
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
-
-import { ViewportService } from './shared/services/viewport/viewport.service';
 import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
+
 import { DropdownDirective } from './shared/directives/dropdown/dropdown.directive';
 
 @NgModule({
@@ -32,7 +34,10 @@ import { DropdownDirective } from './shared/directives/dropdown/dropdown.directi
     AppRoutingModule,
     ProfileModule
   ],
-  providers: [ViewportService],
+  providers: [
+    ViewportService,
+    DropdownService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
