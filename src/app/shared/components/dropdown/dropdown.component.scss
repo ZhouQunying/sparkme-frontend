@@ -7,6 +7,10 @@
 :host {
   position: absolute;
   top: 100%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, 0);
 }
 
 .app-dropdown {

@@ -9,7 +9,7 @@ describe('ViewportService', () => {
     });
   });
 
-  it('should ...', inject([ViewportService], (service: ViewportService) => {
+  it('should be created', inject([ViewportService], (service: ViewportService) => {
     expect(service).toBeTruthy();
   }));
 
