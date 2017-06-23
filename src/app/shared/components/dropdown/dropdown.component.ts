@@ -39,11 +39,15 @@ export class DropdownComponent implements OnInit, OnDestroy {
   }
 
   setClassName() {
-    const hostElCoords = this.viewportService.getCoords(this.hostEl);
-    const bodyElCoords = this.viewportService.getCoords(document.body);
+    let className;
+    const bodyWidth = this.viewportService.getBodyWidth();
+    const bodyHeight = this.viewportService.getBodyHeight();
+    const hostElCoords: any = this.viewportService.getCoords(this.hostEl);
+    const bodyElCoords: any = this.viewportService.getCoords(document.body);
 
-    console.log(hostElCoords);
-    console.log(bodyElCoords);
+    if (hostElCoords.left + this.hostEl.clientWidth > bodyElCoords.left + bodyWidth) {
+      console.log('bottom-right');
+    }
   }
 
   ngOnDestroy() {

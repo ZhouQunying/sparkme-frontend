@@ -13,9 +13,9 @@ describe('ViewportService', () => {
     expect(service).toBeTruthy();
   }));
 
-  describe('#getWindowWidth()', () => {
-    it('should return current window width', inject([ViewportService], (service: ViewportService) => {
-      expect(service.getWindowWidth()).toBeTruthy();
+  describe('#getBodyWidth()', () => {
+    it('should return current body width', inject([ViewportService], (service: ViewportService) => {
+      expect(service.getBodyWidth()).toBeTruthy();
     }));
   });
 });
