@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, OnDestroy, HostBinding } from '@angular/
 import { Subscription } from 'rxjs/Subscription';
 
 import { DropdownService } from '../../services/dropdown/dropdown.service';
+import { ViewportService } from '../../services/viewport/viewport.service';
 
 @Component({
   selector: 'app-dropdown',
@@ -10,30 +11,39 @@ import { DropdownService } from '../../services/dropdown/dropdown.service';
 })
 export class DropdownComponent implements OnInit, OnDestroy {
 
-  @HostBinding('class') classNames;
+  @HostBinding('class') className;
 
+  hostEl: HTMLElement;
   subscription: Subscription;
 
-  constructor(public el: ElementRef, private dropdownService: DropdownService) {
+  constructor(
+    public el: ElementRef,
+    private dropdownService: DropdownService,
+    private viewportService: ViewportService) {
+
+    this.hostEl = el.nativeElement;
+
     // Subscribe stream of dropdown hidden state
     this.subscription = dropdownService.dropdownHidden$.subscribe(hidden => {
-      const hostEl = el.nativeElement;
 
-      // Set css position of container element
+      // Set class name of host element
       if (!hidden) {
-        // hostEl.style.left = `calc(50% - ${hostEl.clientWidth / 2}px)`;
-
-        console.log(hostEl.clientWidth)
-        console.log(hostEl.offsetLeft)
-        console.log(hostEl.parentNode.offsetLeft)
-        // this.classNames = 'class1 class2 class3';
+        this.setClassName();
       }
     });
   }
 
   ngOnInit() {
     // Set parent element css position to relative
-    (<HTMLElement>this.el.nativeElement.parentNode).style.position = 'relative';
+    (<HTMLElement>this.hostEl.parentNode).style.position = 'relative';
+  }
+
+  setClassName() {
+    const hostElCoords = this.viewportService.getCoords(this.hostEl);
+    const bodyElCoords = this.viewportService.getCoords(document.body);
+
+    console.log(hostElCoords);
+    console.log(bodyElCoords);
   }
 
   ngOnDestroy() {
