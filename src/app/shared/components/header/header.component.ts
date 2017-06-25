@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   searchInputToggle() {
     // When the width of window is greater then 1000,
     // use the inner search input to search for, or link to search page
-    if (this.viewportService.getWindowWidth() >= 1000) {
+    if (this.viewportService.getBodyWidth() >= 1000) {
       if (this.searchInputState === 'active') {
         if (!this.searchInput.value.trim()) {
           this.setSearchInputInactive();
