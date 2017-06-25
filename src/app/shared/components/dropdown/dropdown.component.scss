@@ -3,14 +3,10 @@
 // @import '~compass-mixins/lib/compass/css3/box-shadow';
 
 @import 'src/assets/styles/abstracts/valiables';
+@import 'src/assets/styles/abstracts/placeholders/position';
 
 :host {
-  position: absolute;
-  top: 100%;
-  bottom: auto;
-  left: 50%;
-  right: auto;
-  transform: translate(-50%, 0);
+  @extend %position;
 }
 
 .app-dropdown {

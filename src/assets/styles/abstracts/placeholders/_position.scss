@@ -1,0 +1,104 @@
+%position {
+  position: absolute;
+
+  .top-left {
+    top: auto;
+    bottom: 100%;
+    left: 0;
+    right: auto;
+  }
+
+  .top-right {
+    top: auto;
+    bottom: 100%;
+    left: auto;
+    right: 0;
+  }
+
+  .bottom-left {
+    top: 100%;
+    bottom: auto;
+    left: 0;
+    right: auto;
+  }
+
+  .bottom-right {
+    top: 100%;
+    bottom: auto;
+    left: auto;
+    right: 0;
+  }
+
+  .left-top {
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: 100%;
+  }
+
+  .left-bottom {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 100%;
+  }
+
+  .right-top {
+    top: 0;
+    bottom: auto;
+    left: 100%;
+    right: auto;
+  }
+
+  .right-bottom {
+    top: auto;
+    bottom: 0;
+    left: 100%;
+    right: auto;
+  }
+
+  .vertical-center {
+    top: 50%;
+    bottom: auto;
+    transform: translate(0, -50%);
+  }
+
+  .horizontal-center {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+  }
+
+  .top-center {
+    top: auto;
+    bottom: 100%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+  }
+
+  .bottom-center {
+    top: 100%;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+  }
+
+  .left-center {
+    top: 50%;
+    bottom: auto;
+    transform: translate(0, -50%);
+    left: auto;
+    right: 100%;
+  }
+
+  .right-center {
+    top: 50%;
+    bottom: auto;
+    transform: translate(0, -50%);
+    left: 1005;
+    right: auto;
+  }
+}
+
