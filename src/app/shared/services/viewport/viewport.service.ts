@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ViewportService {
 
-  body: HTMLElement = document.body;
+  bodyEl: HTMLElement = document.body;
   docEl: HTMLElement = document.documentElement;
 
   constructor() { }
@@ -11,19 +11,19 @@ export class ViewportService {
   /**
    * @return {number}
    */
-  getWindowWidth(): number {
+  getBodyWidth(): number {
     return window.innerWidth
       || this.docEl.clientWidth
-      || this.body.clientWidth;
+      || this.bodyEl.clientWidth;
   }
 
   /**
    * @return {number}
    */
-  getWindowHeight(): number {
+  getBodyHeight(): number {
     return window.innerHeight
       || this.docEl.clientHeight
-      || this.body.clientHeight;
+      || this.bodyEl.clientHeight;
   }
 
   /**
@@ -31,7 +31,7 @@ export class ViewportService {
    * @return {number} left Left relative to the viewport.
    */
   getCoordsLeft(el: HTMLElement): number {
-    const body = this.body;
+    const body = this.bodyEl;
     const docEl = this.docEl;
     const scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
     const clientLeft = docEl.clientLeft || body.clientLeft || 0;
@@ -45,7 +45,7 @@ export class ViewportService {
    * @return {number} top Top relative to the viewport.
    */
   getCoordsTop(el: HTMLElement): number {
-    const body = this.body;
+    const body = this.bodyEl;
     const docEl = this.docEl;
     const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
     const clientTop = docEl.clientTop || body.clientTop || 0;
