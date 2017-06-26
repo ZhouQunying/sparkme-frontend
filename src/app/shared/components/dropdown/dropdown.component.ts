@@ -27,9 +27,7 @@ export class DropdownComponent implements OnInit, OnDestroy {
     this.subscription = dropdownService.dropdownHidden$.subscribe(hidden => {
 
       // Set class name of host element
-      if (!hidden) {
-        this.setClassName();
-      }
+      this.setClassName(hidden);
     });
   }
 
@@ -38,41 +36,50 @@ export class DropdownComponent implements OnInit, OnDestroy {
     (<HTMLElement>this.hostEl.parentNode).style.position = 'relative';
   }
 
-  setClassName() {
-    let classVertical = 'bottom';
-    let classHorizontal = 'center';
-    const bodyWidth = this.viewportService.getBodyWidth();
-    const bodyHeight = this.viewportService.getBodyHeight();
-    const hostElCoords: any = this.viewportService.getCoords(this.hostEl);
-    const bodyElCoords: any = this.viewportService.getCoords(document.body);
+  setClassName(hidden) {
+    console.log(this.el)
 
-    const hostElLeftBound = hostElCoords.left;
-    const bodyLeftBound = bodyElCoords.left;
-    const hostElRightBound = hostElLeftBound + this.hostEl.clientWidth;
-    const bodyRightBound = bodyLeftBound + bodyWidth;
+    if (!hidden) {
+      let classVertical = 'bottom';
+      let classHorizontal = 'center';
+      const bodyWidth = this.viewportService.getBodyWidth();
+      const bodyHeight = this.viewportService.getBodyHeight();
+      const hostElCoords: any = this.viewportService.getCoords(this.hostEl);
+      const bodyElCoords: any = this.viewportService.getCoords(document.body);
 
-    const hostElTopBound = hostElCoords.top;
-    const bodyTopBound = bodyElCoords.top;
-    const hostElBottomBound = hostElTopBound + this.hostEl.clientHeight;
-    const bodyBottomBound = bodyTopBound + bodyHeight;
+      const hostElLeftBound = hostElCoords.left;
+      const bodyLeftBound = bodyElCoords.left;
+      const hostElRightBound = hostElLeftBound + this.hostEl.clientWidth;
+      const bodyRightBound = bodyLeftBound + bodyWidth;
 
-     if (hostElTopBound < bodyTopBound && hostElBottomBound > bodyBottomBound) {
-      classHorizontal = 'bottom';
-    } else if (hostElTopBound < bodyTopBound) {
-      classHorizontal = 'top';
-    } else if (hostElBottomBound > bodyBottomBound) {
-      classHorizontal = 'bottom';
+      if (hostElLeftBound < bodyLeftBound && hostElRightBound > bodyRightBound) {
+        classHorizontal = 'center';
+        console.log(classHorizontal);
+      } else if (hostElLeftBound < bodyLeftBound) {
+        classHorizontal = 'left';
+        console.log(classHorizontal);
+      } else if (hostElRightBound > bodyRightBound) {
+        classHorizontal = 'right';
+        console.log(classHorizontal);
+      }
+
+      const hostElTopBound = hostElCoords.top;
+      const bodyTopBound = bodyElCoords.top;
+      const hostElBottomBound = hostElTopBound + this.hostEl.clientHeight;
+      const bodyBottomBound = bodyTopBound + bodyHeight;
+
+       if (hostElTopBound < bodyTopBound && hostElBottomBound > bodyBottomBound) {
+        classVertical = 'bottom';
+      } else if (hostElTopBound < bodyTopBound) {
+        classVertical = 'top';
+      } else if (hostElBottomBound > bodyBottomBound) {
+        classVertical = 'bottom';
+      }
+
+      this.classNames = `${classVertical}-${classHorizontal}`;
+    } else {
+      this.classNames = '';
     }
-
-    if (hostElLeftBound < bodyLeftBound && hostElRightBound > bodyRightBound) {
-      classHorizontal = 'center';
-    } else if (hostElLeftBound < bodyLeftBound) {
-      classHorizontal = 'left';
-    } else if (hostElRightBound > bodyRightBound) {
-      classHorizontal = 'right';
-    }
-
-    this.classNames = `${classVertical}-${classHorizontal}`;
   }
 
   ngOnDestroy() {
