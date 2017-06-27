@@ -11,7 +11,7 @@ import { ViewportService } from '../../services/viewport/viewport.service';
 })
 export class DropdownComponent implements OnInit, OnDestroy {
 
-  @HostBinding('class') classNames;
+  @HostBinding('class') classNames = 'bottom-center';
 
   hostEl: HTMLElement;
   subscription: Subscription;
@@ -37,49 +37,38 @@ export class DropdownComponent implements OnInit, OnDestroy {
   }
 
   setClassName(hidden) {
-    console.log(this.el)
+    let classNames = 'bottom-center';
 
     if (!hidden) {
       let classVertical = 'bottom';
       let classHorizontal = 'center';
-      const bodyWidth = this.viewportService.getBodyWidth();
-      const bodyHeight = this.viewportService.getBodyHeight();
       const hostElCoords: any = this.viewportService.getCoords(this.hostEl);
       const bodyElCoords: any = this.viewportService.getCoords(document.body);
+
+      const hostElBottomBound = hostElCoords.top + this.hostEl.clientHeight;
+      const bodyBottomBound = bodyElCoords.top + this.viewportService.getBodyHeight();
 
       const hostElLeftBound = hostElCoords.left;
       const bodyLeftBound = bodyElCoords.left;
       const hostElRightBound = hostElLeftBound + this.hostEl.clientWidth;
-      const bodyRightBound = bodyLeftBound + bodyWidth;
+      const bodyRightBound = bodyLeftBound + this.viewportService.getBodyWidth();
+
+      if (hostElBottomBound > bodyBottomBound) {
+        classVertical = 'top';
+      }
 
       if (hostElLeftBound < bodyLeftBound && hostElRightBound > bodyRightBound) {
         classHorizontal = 'center';
-        console.log(classHorizontal);
       } else if (hostElLeftBound < bodyLeftBound) {
         classHorizontal = 'left';
-        console.log(classHorizontal);
       } else if (hostElRightBound > bodyRightBound) {
         classHorizontal = 'right';
-        console.log(classHorizontal);
       }
 
-      const hostElTopBound = hostElCoords.top;
-      const bodyTopBound = bodyElCoords.top;
-      const hostElBottomBound = hostElTopBound + this.hostEl.clientHeight;
-      const bodyBottomBound = bodyTopBound + bodyHeight;
-
-       if (hostElTopBound < bodyTopBound && hostElBottomBound > bodyBottomBound) {
-        classVertical = 'bottom';
-      } else if (hostElTopBound < bodyTopBound) {
-        classVertical = 'top';
-      } else if (hostElBottomBound > bodyBottomBound) {
-        classVertical = 'bottom';
-      }
-
-      this.classNames = `${classVertical}-${classHorizontal}`;
-    } else {
-      this.classNames = '';
+      classNames = `${classVertical}-${classHorizontal}`;
     }
+
+    this.classNames = classNames;
   }
 
   ngOnDestroy() {
