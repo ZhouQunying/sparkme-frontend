@@ -21,17 +21,17 @@
             (blur)="searchInputOnBlur()">
         </div>
 
-        <div class="header-avater" [appDropdown]="avaterMenu">
+        <div class="header-avater" [appPopup]="avaterMenu">
           <div class="avatar">
             <img src="https://cdn-images-1.medium.com/fit/c/64/64/1*TEizCLUW2u5y83tEfgXncw.jpeg">
           </div>
 
-          <app-dropdown #avaterMenu>
+          <app-popup #avaterMenu>
             <nav>
               <li><a href="#">Profile</a></li>
               <li><a href="#">Sign out</a></li>
             </nav>
-          </app-dropdown>
+          </app-popup>
         </div>
       </div>
     </div>

@@ -1,15 +1,15 @@
 import { Component, ElementRef, OnInit, OnDestroy, HostBinding } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { DropdownService } from '../../services/dropdown/dropdown.service';
+import { PopupService } from '../../services/popup/popup.service';
 import { ViewportService } from '../../services/viewport/viewport.service';
 
 @Component({
-  selector: 'app-dropdown',
-  templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  selector: 'app-popup',
+  templateUrl: './popup.component.html',
+  styleUrls: ['./popup.component.scss']
 })
-export class DropdownComponent implements OnInit, OnDestroy {
+export class PopupComponent implements OnInit, OnDestroy {
 
   @HostBinding('class') classNames = 'bottom-center';
 
@@ -18,13 +18,13 @@ export class DropdownComponent implements OnInit, OnDestroy {
 
   constructor(
     public el: ElementRef,
-    private dropdownService: DropdownService,
+    private popupService: PopupService,
     private viewportService: ViewportService) {
 
     this.hostEl = el.nativeElement;
 
-    // Subscribe stream of dropdown hidden state
-    this.subscription = dropdownService.dropdownHidden$.subscribe(hidden => {
+    // Subscribe stream of popup hidden state
+    this.subscription = popupService.popupHidden$.subscribe(hidden => {
 
       // Set class name of host element
       this.setClassName(hidden);
