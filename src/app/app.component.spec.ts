@@ -2,14 +2,14 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { ViewportService } from './shared/services/viewport/viewport.service';
-import { DropdownService } from './shared/services/dropdown/dropdown.service';
+import { PopupService } from './shared/services/popup/popup.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
-import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
+import { PopupComponent } from './shared/components/popup/popup.component';
 
-import { DropdownDirective } from './shared/directives/dropdown/dropdown.directive';
+import { PopupDirective } from './shared/directives/popup/popup.directive';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -21,12 +21,12 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent,
         SvgIconComponent,
-        DropdownComponent,
-        DropdownDirective
+        PopupComponent,
+        PopupDirective
       ],
       providers: [
         ViewportService,
-        DropdownService
+        PopupService
       ]
     }).compileComponents();
   }));

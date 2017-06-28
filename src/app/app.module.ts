@@ -9,21 +9,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProfileModule } from './profile/profile.module';
 
 import { ViewportService } from './shared/services/viewport/viewport.service';
-import { DropdownService } from './shared/services/dropdown/dropdown.service';
+import { PopupService } from './shared/services/popup/popup.service';
 
 import { HeaderComponent } from './shared/components/header/header.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
-import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
+import { PopupComponent } from './shared/components/popup/popup.component';
 
-import { DropdownDirective } from './shared/directives/dropdown/dropdown.directive';
+import { PopupDirective } from './shared/directives/popup/popup.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SvgIconComponent,
-    DropdownComponent,
-    DropdownDirective
+    PopupComponent,
+    PopupDirective
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,7 @@ import { DropdownDirective } from './shared/directives/dropdown/dropdown.directi
   ],
   providers: [
     ViewportService,
-    DropdownService
+    PopupService
   ],
   bootstrap: [AppComponent]
 })
