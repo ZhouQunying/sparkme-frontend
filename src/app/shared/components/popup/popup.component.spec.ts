@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ViewportService } from '../../services/viewport/viewport.service';
 import { PopupService } from '../../services/popup/popup.service';
 import { PopupComponent } from './popup.component';
 
@@ -10,7 +11,10 @@ describe('PopupComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PopupComponent],
-      providers: [PopupService]
+      providers: [
+        ViewportService,
+        PopupService
+      ]
     })
     .compileComponents();
   }));
