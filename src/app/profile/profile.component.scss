@@ -1,0 +1,40 @@
+@import '~compass-mixins/lib/compass/utilities/general/clearfix';
+
+@import 'src/assets/styles/abstracts/valiables';
+@import 'src/assets/styles/components/avatar';
+@import 'src/assets/styles/layout/profile';
+
+$avatar-size: 100px;
+
+.profile {
+  background-color: #fff;
+}
+
+.profile-header {
+  @include clearfix;
+  padding: $main-padding;
+}
+
+.profile-avater {
+  width: $avatar-size;
+  height: $avatar-size;
+  float: left;
+}
+
+.profile-detail {
+  box-sizing: border-box;
+  width: calc(100% - #{$avatar-size});
+  padding-left: $main-padding;
+  float: right;
+}
+
+.profile-name {
+  line-height: $avatar-size / 2;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.profile-description {
+  line-height: 1.4em;
+  color: $main-dark-gray;
+}

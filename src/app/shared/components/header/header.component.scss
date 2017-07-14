@@ -5,20 +5,18 @@
 
 @import 'src/assets/styles/abstracts/valiables';
 @import 'src/assets/styles/components/avatar';
+@import 'src/assets/styles/layout/header';
 
 $header-height: 65px;
 
 .header {
   @include user-select(none);
-  width: 100%;
   height: $header-height;
   background-color: hsl(0, 0%, 100%);
 }
 
 .header-container {
   height: 100%;
-  max-width: $main-max-width;
-  margin: 0 auto;
   padding-left: $main-padding;
   padding-right: $main-padding;
 }

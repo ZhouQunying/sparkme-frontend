@@ -1,0 +1,12 @@
+@import 'src/assets/styles/abstracts/valiables';
+
+.header {
+  width: 100%;
+  min-width: $main-min-width;
+}
+
+.header-container {
+  box-sizing: border-box;
+  max-width: $main-max-width;
+  margin: 0 auto;
+}
