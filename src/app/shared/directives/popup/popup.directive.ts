@@ -29,6 +29,7 @@ export class PopupDirective implements OnInit {
   @HostListener('document:click', ['$event']) onBesidesClick() {
     if (!this.el.nativeElement.contains(event.target)) {
       this.popupEl.hidden = true;
+      this.popupService.togglePopup(true);
     }
   }
 }
