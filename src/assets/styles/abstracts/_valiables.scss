@@ -1,3 +1,4 @@
+/* Space */
 // Main content min width
 $main-min-width: 320px;
 
@@ -7,8 +8,16 @@ $main-max-width: 1040px;
 // Main padding space
 $main-padding: 20px;
 
+// Main margin space
+$main-margin: 20px;
+
+
+/* Color */
 // Main theme color
 $main-color: hsl(196, 44%, 24%);
+
+// Main link color
+$main-link-color: hsl(196, 44%, 24%);
 
 // Main background color
 $main-background-color: hsl(0, 0%, 98%);
@@ -24,3 +33,8 @@ $input-color: hsla(0, 0%, 0%, .8);
 
 // Place holder color
 $placeholder-color: hsl(0, 0%, 75%);
+
+
+/* Transition */
+// Main transition duration
+$transition-duration: .1s;

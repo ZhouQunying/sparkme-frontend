@@ -1,4 +1,5 @@
 @import '~compass-mixins/lib/compass/utilities/general/clearfix';
+@import '~compass-mixins/lib/compass/css3';
 
 @import 'src/assets/styles/abstracts/valiables';
 @import 'src/assets/styles/components/avatar';
@@ -15,6 +16,10 @@ $avatar-size: 100px;
   padding: $main-padding;
 }
 
+.profile-clearfix {
+  @include clearfix;
+}
+
 .profile-avater {
   width: $avatar-size;
   height: $avatar-size;
@@ -22,20 +27,53 @@ $avatar-size: 100px;
 }
 
 .profile-detail {
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   width: calc(100% - #{$avatar-size});
   padding-left: $main-padding;
   float: right;
 }
 
 .profile-name {
+  @include word-break(break-word);
   line-height: $avatar-size / 2;
   font-weight: 600;
   font-size: 2em;
-  word-wrap: break-word;
 }
 
 .profile-description {
   line-height: 1.4em;
+  font-weight: 200;
   color: $main-dark-gray;
+}
+
+.profile-valuation {
+  margin-top: $main-margin;
+}
+
+.profile-valuation-list {
+  float: left;
+
+  &:not(:last-of-type) {
+    margin-right: 40px;
+  }
+}
+
+.profile-valuation-nav {
+  @include transition-property(color);
+  @include transition-duration($transition-duration);
+  color: $main-dark-gray;
+
+  &:hover {
+    color: $main-link-color;
+  }
+
+  span {
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 200;
+  }
+
+  small {
+    font-size: .8em;
+  }
 }

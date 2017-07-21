@@ -1,7 +1,7 @@
 @import '~compass-mixins/lib/compass/reset/utilities';
-@import '~compass-mixins/lib/compass/css3/user-interface';
+@import '~compass-mixins/lib/compass/css3';
 @import '~compass-mixins/lib/compass/typography/links';
-// @import '~compass-mixins/lib/compass/css3/transition';
+@import '~compass-mixins/lib/compass/typography/text/nowrap';
 
 @import 'src/assets/styles/abstracts/valiables';
 @import 'src/assets/styles/components/avatar';
@@ -45,19 +45,19 @@ $header-height: 65px;
 }
 
 .header-search-icon {
-  // @include transition-duration(.1s);
+  @include transition-property(fill);
+  @include transition-duration($transition-duration);
   font-size: 1.5em;
   fill: hsla(0, 0%, 0%, .5);
-  transition: fill .1s;
 
   &:hover {
-    fill: hsla(0, 0%, 0%, .7);
+    fill: $main-link-color;
   }
 }
 
 .header-search-input {
+  @include box-sizing(border-box);
   @include reset-focus;
-  box-sizing: border-box;
   width: 200px;
   height: $header-height;
   vertical-align: top;
@@ -80,10 +80,10 @@ $header-height: 65px;
   }
 
   nav {
+    @include nowrap;
     padding: 10px;
     line-height: 2em;
     font-size: .9em;
     font-weight: 100;
-    white-space: nowrap;
   }
 }
