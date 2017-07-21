@@ -1,0 +1,14 @@
+@import '~compass-mixins/lib/compass/css3/box-sizing';
+
+@import 'src/assets/styles/abstracts/valiables';
+
+.profile {
+  width: 100%;
+  min-width: $main-min-width;
+}
+
+.profile-header {
+  @include box-sizing(border-box);
+  max-width: $main-max-width;
+  margin: 0 auto;
+}
