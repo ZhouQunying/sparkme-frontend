@@ -49,22 +49,23 @@ $avatar-size: 100px;
 
 .profile-valuation {
   margin-top: $main-margin;
-}
 
-.profile-valuation-list {
-  @include transition-property(color);
-  @include transition-duration($transition-duration);
-  @include link-colors($main-dark-gray, $main-link-color);
-  float: left;
+  li {
+    @include transition-property(color);
+    @include transition-duration($transition-duration);
+    @include link-colors($main-dark-gray, $main-link-color);
+    float: left;
 
-  &:not(:last-of-type) {
-    margin-right: 40px;
+    &:not(:last-of-type) {
+      margin-right: 40px;
+    }
   }
 
   span {
     display: block;
     padding-bottom: 5px;
     font-weight: 200;
+    font-size: 1.2em;
   }
 
   small {
