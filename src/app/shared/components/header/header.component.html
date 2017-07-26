@@ -28,7 +28,7 @@
 
           <app-popup #avaterMenu>
             <nav>
-              <li><a href="#">Profile</a></li>
+              <li><a href="/profile">Profile</a></li>
               <li><a href="#">Sign out</a></li>
             </nav>
           </app-popup>
@@ -36,6 +36,24 @@
       </div>
     </div>
 
-    <nav class="header-minor"></nav>
+    <nav class="header-minor">
+      <ul>
+        <li>
+          <app-svg-icon
+            class="header-search-icon"
+            [svg]="'#icon-search'"></app-svg-icon>
+        </li>
+        <li>
+          <app-svg-icon
+            class="header-search-icon"
+            [svg]="'#icon-search'"></app-svg-icon>
+        </li>
+        <li>
+          <app-svg-icon
+            class="header-search-icon"
+            [svg]="'#icon-search'"></app-svg-icon>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>

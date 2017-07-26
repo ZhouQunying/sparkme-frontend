@@ -1,5 +1,6 @@
 @import '~compass-mixins/lib/compass/utilities/general/clearfix';
 @import '~compass-mixins/lib/compass/css3';
+@import '~compass-mixins/lib/compass/typography/links/link-colors';
 
 @import 'src/assets/styles/abstracts/valiables';
 @import 'src/assets/styles/components/avatar';
@@ -16,7 +17,7 @@ $avatar-size: 100px;
   padding: $main-padding;
 }
 
-.profile-clearfix {
+.profile-introduction {
   @include clearfix;
 }
 
@@ -48,32 +49,27 @@ $avatar-size: 100px;
 
 .profile-valuation {
   margin-top: $main-margin;
-}
 
-.profile-valuation-list {
-  float: left;
+  li {
+    @include transition-property(color);
+    @include transition-duration($transition-duration);
+    @include link-colors($main-dark-gray, $main-link-color);
+    float: left;
 
-  &:not(:last-of-type) {
-    margin-right: 40px;
-  }
-}
-
-.profile-valuation-nav {
-  @include transition-property(color);
-  @include transition-duration($transition-duration);
-  color: $main-dark-gray;
-
-  &:hover {
-    color: $main-link-color;
+    &:not(:last-of-type) {
+      margin-right: 40px;
+    }
   }
 
   span {
     display: block;
     padding-bottom: 5px;
     font-weight: 200;
+    font-size: 1.2em;
   }
 
   small {
     font-size: .8em;
+    font-weight: 200;
   }
 }

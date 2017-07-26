@@ -2,28 +2,31 @@
 @import '~compass-mixins/lib/compass/css3';
 @import '~compass-mixins/lib/compass/typography/links';
 @import '~compass-mixins/lib/compass/typography/text/nowrap';
+@import '~compass-mixins/lib/compass/utilities/general/clearfix';
 
 @import 'src/assets/styles/abstracts/valiables';
 @import 'src/assets/styles/components/avatar';
 @import 'src/assets/styles/layout/header';
 
-$header-height: 65px;
+$header-major-height: 65px;
 
 .header {
   @include user-select(none);
-  height: $header-height;
   background-color: hsl(0, 0%, 100%);
 }
 
 .header-container {
-  height: 100%;
   padding-left: $main-padding;
   padding-right: $main-padding;
 }
 
+.header-major {
+  height: $header-major-height;
+}
+
 .header-logo {
   float: left;
-  line-height: $header-height;
+  line-height: $header-major-height;
   font-size: 1.75em;
   font-weight: 200;
 
@@ -38,10 +41,10 @@ $header-height: 65px;
 
 .header-search {
   float: left;
-  height: $header-height;
+  height: $header-major-height;
   margin-right: 10px;
   margin-left: 10px;
-  line-height: $header-height;
+  line-height: $header-major-height;
 }
 
 .header-search-icon {
@@ -59,7 +62,7 @@ $header-height: 65px;
   @include box-sizing(border-box);
   @include reset-focus;
   width: 200px;
-  height: $header-height;
+  height: $header-major-height;
   vertical-align: top;
   border: 0;
   font-size: .8em;
@@ -71,7 +74,7 @@ $header-height: 65px;
   float: right;
   width: $avatar-size;
   height: $avatar-size;
-  margin-top: ($header-height - $avatar-size) / 2;
+  margin-top: ($header-major-height - $avatar-size) / 2;
 
   .avatar {
     width: 100%;
@@ -85,5 +88,15 @@ $header-height: 65px;
     line-height: 2em;
     font-size: .9em;
     font-weight: 100;
+  }
+}
+
+.header-minor {
+  ul {
+    @include clearfix;
+  }
+
+  li {
+    float: left;
   }
 }
