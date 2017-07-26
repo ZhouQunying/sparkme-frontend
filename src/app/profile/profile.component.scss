@@ -17,7 +17,7 @@ $avatar-size: 100px;
   padding: $main-padding;
 }
 
-.profile-clearfix {
+.profile-introduction {
   @include clearfix;
 }
 
@@ -70,5 +70,6 @@ $avatar-size: 100px;
 
   small {
     font-size: .8em;
+    font-weight: 200;
   }
 }
