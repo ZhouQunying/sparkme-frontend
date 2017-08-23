@@ -10,7 +10,7 @@
 $avatar-size: 100px;
 
 // Layout
-@include layout(profile, profile-header);
+@include layout(profile, profile-header, $minor-max-width);
 
 .profile {
   background-color: #fff;
