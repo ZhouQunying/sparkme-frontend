@@ -5,10 +5,14 @@
 @import '~compass-mixins/lib/compass/utilities/general/clearfix';
 
 @import 'src/assets/styles/abstracts/valiables';
+@import 'src/assets/styles/abstracts/mixins/layout';
 @import 'src/assets/styles/components/avatar';
-@import 'src/assets/styles/layout/header';
 
+// Valiables
 $header-major-height: 65px;
+
+// Layout
+@include layout(header, header-container);
 
 .header {
   @include user-select(none);

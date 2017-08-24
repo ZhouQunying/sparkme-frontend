@@ -3,10 +3,14 @@
 @import '~compass-mixins/lib/compass/typography/links/link-colors';
 
 @import 'src/assets/styles/abstracts/valiables';
+@import 'src/assets/styles/abstracts/mixins/layout';
 @import 'src/assets/styles/components/avatar';
-@import 'src/assets/styles/layout/profile';
 
+// Valiables
 $avatar-size: 100px;
+
+// Layout
+@include layout(profile, profile-header, $minor-max-width);
 
 .profile {
   background-color: #fff;
