@@ -5,6 +5,11 @@
 
 :host {
   @extend %position;
+
+  // ::ng-deep > :nth-child(n) {
+  //   position: relative;
+  //   z-index: 1;
+  // }
 }
 
 .app-popup {
@@ -31,9 +36,4 @@
   //   background-color: $background-color;
   //   content: '';
   // }
-
-  /deep/ > :nth-child(n) {
-    position: relative;
-    z-index: 1;
-  }
 }

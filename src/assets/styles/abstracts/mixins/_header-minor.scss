@@ -2,13 +2,8 @@
 
 @import 'src/assets/styles/abstracts/valiables';
 
-@mixin layout($class, $class-container, $max-width: $main-max-width) {
-  .#{$class} {
-    width: 100%;
-    min-width: $main-min-width;
-  }
-
-  .#{$class-container} {
+@mixin header-minor($max-width: $main-max-width) {
+  :host ::ng-deep app-header .header-minor {
     @include box-sizing(border-box);
     max-width: $max-width;
     margin: 0 auto;
