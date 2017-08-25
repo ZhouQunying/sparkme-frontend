@@ -39,12 +39,12 @@
     <ng-content></ng-content>
 
     <nav class="header-minor">
-      <a routerLink="/" routerLinkActive="active">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <app-svg-icon
           class="header-minor-icon"
           [svg]="'#icon-home'"></app-svg-icon>
       </a>
-      <a routerLink="/" routerLinkActive="active">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <app-svg-icon
           class="header-minor-icon"
           [svg]="'#icon-location'"></app-svg-icon>

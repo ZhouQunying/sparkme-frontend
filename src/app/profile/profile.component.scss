@@ -10,7 +10,7 @@
 $avatar-size: 100px;
 
 // Layout
-@include layout('.profile', '.profile-header, :host ::ng-deep app-header .header-minor', $minor-max-width);
+@include layout('.profile', '.profile-header, #{$header-minor-selector}', $minor-max-width);
 
 .profile {
   background-color: #fff;
