@@ -12,7 +12,7 @@
 $header-major-height: 65px;
 
 // Layout
-@include layout(header, header-container);
+@include layout('.header', '.header-container');
 
 .header {
   @include user-select(none);

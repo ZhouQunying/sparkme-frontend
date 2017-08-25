@@ -2,13 +2,13 @@
 
 @import 'src/assets/styles/abstracts/valiables';
 
-@mixin layout($class, $class-container, $max-width: $main-max-width) {
-  .#{$class} {
+@mixin layout($parent-container, $sub-container, $max-width: $main-max-width) {
+  #{$parent-container} {
     width: 100%;
     min-width: $main-min-width;
   }
 
-  .#{$class-container} {
+  #{$sub-container} {
     @include box-sizing(border-box);
     max-width: $max-width;
     margin: 0 auto;

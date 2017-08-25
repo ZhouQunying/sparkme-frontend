@@ -4,17 +4,13 @@
 
 @import 'src/assets/styles/abstracts/valiables';
 @import 'src/assets/styles/abstracts/mixins/layout';
-@import 'src/assets/styles/abstracts/mixins/header-minor';
 @import 'src/assets/styles/components/avatar';
 
 // Valiables
 $avatar-size: 100px;
 
 // Layout
-@include layout(profile, profile-header, $minor-max-width);
-
-// Header minor
-@include header-minor($minor-max-width);
+@include layout('.profile', '.profile-header, :host ::ng-deep app-header .header-minor', $minor-max-width);
 
 .profile {
   background-color: #fff;
