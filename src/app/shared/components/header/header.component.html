@@ -36,24 +36,24 @@
       </div>
     </div>
 
+    <ng-content></ng-content>
+
     <nav class="header-minor">
-      <ul>
-        <li>
-          <app-svg-icon
-            class="header-search-icon"
-            [svg]="'#icon-search'"></app-svg-icon>
-        </li>
-        <li>
-          <app-svg-icon
-            class="header-search-icon"
-            [svg]="'#icon-search'"></app-svg-icon>
-        </li>
-        <li>
-          <app-svg-icon
-            class="header-search-icon"
-            [svg]="'#icon-search'"></app-svg-icon>
-        </li>
-      </ul>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <app-svg-icon
+          class="header-minor-icon"
+          [svg]="'#icon-home'"></app-svg-icon>
+      </a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <app-svg-icon
+          class="header-minor-icon"
+          [svg]="'#icon-location'"></app-svg-icon>
+      </a>
+      <a routerLink="/profile" routerLinkActive="active">
+        <app-svg-icon
+          class="header-minor-icon"
+          [svg]="'#icon-profile'"></app-svg-icon>
+      </a>
     </nav>
   </div>
 </div>

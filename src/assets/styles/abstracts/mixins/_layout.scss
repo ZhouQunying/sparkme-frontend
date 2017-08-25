@@ -2,15 +2,19 @@
 
 @import 'src/assets/styles/abstracts/valiables';
 
-@mixin layout($class, $class-container, $max-width: $main-max-width) {
-  .#{$class} {
+@mixin layout($parent-selector, $sub-selectors, $max-width: $main-max-width) {
+  #{$parent-selector} {
     width: 100%;
     min-width: $main-min-width;
   }
 
-  .#{$class-container} {
-    @include box-sizing(border-box);
-    max-width: $max-width;
-    margin: 0 auto;
+  @each $selector-name in $sub-selectors {
+    #{$selector-name} {
+      @include box-sizing(border-box);
+      max-width: $max-width;
+      margin: 0 auto;
+      padding-left: $main-padding;
+      padding-right: $main-padding;
+    }
   }
 }

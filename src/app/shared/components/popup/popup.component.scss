@@ -21,6 +21,7 @@
   // &::after {
   //   // @include box-shadow(-1px -1px 0 0 $main-border-color);
   //   @include transform(rotate(45deg));
+  //   content: '';
   //   display: block;
   //   position: absolute;
   //   top: -$point-size / 2;
@@ -29,11 +30,10 @@
   //   width: $point-size;
   //   height: $point-size;
   //   background-color: $background-color;
-  //   content: '';
   // }
 
-  /deep/ > :nth-child(n) {
-    position: relative;
-    z-index: 1;
-  }
+  // ::ng-deep > :nth-child(n) {
+  //   position: relative;
+  //   z-index: 1;
+  // }
 }

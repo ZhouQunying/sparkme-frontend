@@ -10,7 +10,7 @@
 $avatar-size: 100px;
 
 // Layout
-@include layout(profile, profile-header, $minor-max-width);
+@include layout('.profile', '.profile-header, #{$header-minor-selector}', $minor-max-width);
 
 .profile {
   background-color: #fff;
@@ -18,7 +18,8 @@ $avatar-size: 100px;
 
 .profile-header {
   @include clearfix;
-  padding: $main-padding;
+  padding-top: $main-padding;
+  padding-bottom: $main-padding;
 }
 
 .profile-introduction {

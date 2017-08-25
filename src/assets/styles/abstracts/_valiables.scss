@@ -41,3 +41,7 @@ $placeholder-color: hsl(0, 0%, 75%);
 /* Transition */
 // Main transition duration
 $transition-duration: .1s;
+
+/* Selector */
+// Header minor selector
+$header-minor-selector: ':host ::ng-deep app-header .header-minor';

@@ -12,16 +12,11 @@
 $header-major-height: 65px;
 
 // Layout
-@include layout(header, header-container);
+@include layout('.header', '.header-container');
 
 .header {
   @include user-select(none);
   background-color: hsl(0, 0%, 100%);
-}
-
-.header-container {
-  padding-left: $main-padding;
-  padding-right: $main-padding;
 }
 
 .header-major {
