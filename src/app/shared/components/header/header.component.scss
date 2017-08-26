@@ -12,7 +12,7 @@
 $header-major-height: 65px;
 
 // Layout
-@include layout('.header', '.header-container');
+@include layout('.header', '.header-major-layout');
 
 .header {
   @include user-select(none);
@@ -21,6 +21,7 @@ $header-major-height: 65px;
 
 .header-major {
   height: $header-major-height;
+  border-bottom: 1px solid $main-border-color;
 }
 
 .header-logo {
@@ -91,11 +92,15 @@ $header-major-height: 65px;
 }
 
 .header-minor {
-  ul {
-    @include clearfix;
-  }
+  a {
+    display: inline-block;
+    margin-right: 1em;
+    line-height: 2.4em;
+    font-size: 1.2em;
+    fill: hsla(0, 0%, 0%, .5);
 
-  li {
-    float: left;
+    &:hover, &.active {
+      fill: $main-link-color;
+    }
   }
 }

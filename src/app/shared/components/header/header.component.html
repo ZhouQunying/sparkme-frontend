@@ -1,6 +1,6 @@
 <div class="header">
-  <div class="header-container">
-    <div class="header-major">
+  <div class="header-major">
+    <div class="header-major-layout">
       <div class="header-logo">
         <a href="/">Sparkme</a>
       </div>
@@ -35,10 +35,12 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <ng-content></ng-content>
+  <ng-content></ng-content>
 
-    <nav class="header-minor">
+  <div class="header-minor">
+    <nav class="header-minor-layout">
       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <app-svg-icon
           class="header-minor-icon"
