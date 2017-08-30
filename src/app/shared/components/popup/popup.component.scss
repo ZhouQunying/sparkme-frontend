@@ -1,7 +1,7 @@
 @import '~compass-mixins/lib/compass/css3';
 
 @import 'src/assets/styles/abstracts/valiables';
-@import 'src/assets/styles/abstracts/placeholders/position';
+@import 'src/assets/styles/abstracts/placeholders';
 
 :host {
   @extend %position;

@@ -1,5 +1,3 @@
-@import '~compass-mixins/lib/compass/css3/box-sizing';
-
 @import 'src/assets/styles/abstracts/valiables';
 
 @mixin layout($parent-selector, $sub-selectors, $max-width: $main-max-width) {
@@ -10,7 +8,6 @@
 
   @each $selector-name in $sub-selectors {
     #{$selector-name} {
-      @include box-sizing(border-box);
       max-width: $max-width;
       margin: 0 auto;
       padding-left: $main-padding;

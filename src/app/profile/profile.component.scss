@@ -16,14 +16,10 @@ $avatar-size: 100px;
   background-color: #fff;
 }
 
-.profile-header {
-  border-bottom: 1px solid $main-border-color;
-}
-
-.profile-header-layout {
-  @include clearfix;
+.profile-header-container {
   padding-top: $main-padding;
   padding-bottom: $main-padding;
+  border-bottom: 1px solid $main-border-color;
 }
 
 .profile-introduction {
@@ -37,7 +33,6 @@ $avatar-size: 100px;
 }
 
 .profile-detail {
-  @include box-sizing(border-box);
   width: calc(100% - #{$avatar-size});
   padding-left: $main-padding;
   float: right;
@@ -57,6 +52,7 @@ $avatar-size: 100px;
 }
 
 .profile-valuation {
+  @include clearfix;
   margin-top: $main-margin;
 
   li {
