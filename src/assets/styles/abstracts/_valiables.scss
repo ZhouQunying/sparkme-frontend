@@ -23,10 +23,10 @@ $main-color: hsl(196, 44%, 24%);
 $main-link-color: hsl(196, 44%, 24%);
 
 // Main background color
-$main-background-color: hsl(0, 0%, 98%);
+$main-background-color: hsl(0, 0%, 95%);
 
 // Main border color
-$main-border-color: hsla(0, 0%, 0%, .2);
+$main-border-color: hsla(0, 0%, 0%, .05);
 
 // Main dark gray
 $main-dark-gray: hsl(0, 1%, 66%);
@@ -44,4 +44,4 @@ $transition-duration: .1s;
 
 /* Selector */
 // Header minor selector
-$header-minor-selector: ':host ::ng-deep app-header .header-minor';
+$header-minor-layout: ':host ::ng-deep app-header .header-minor-layout';
