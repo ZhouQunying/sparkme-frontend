@@ -6,6 +6,7 @@
 
 @import 'src/assets/styles/abstracts/valiables';
 @import 'src/assets/styles/abstracts/mixins/layout';
+@import 'src/assets/styles/abstracts/placeholders';
 @import 'src/assets/styles/components/avatar';
 
 // Valiables
@@ -21,7 +22,11 @@ $header-major-height: 65px;
 
 .header-major {
   height: $header-major-height;
-  border-bottom: 1px solid $main-border-color;
+  // border-bottom: 1px solid $main-border-color;
+}
+
+.header-major-layout {
+  @extend %clearfix;
 }
 
 .header-logo {
@@ -50,7 +55,6 @@ $header-major-height: 65px;
 .header-search-icon {
   @include transition-property(fill);
   @include transition-duration($transition-duration);
-  font-size: 1.2em;
   fill: hsla(0, 0%, 0%, .5);
 
   &:hover {
@@ -59,7 +63,6 @@ $header-major-height: 65px;
 }
 
 .header-search-input {
-  @include box-sizing(border-box);
   @include reset-focus;
   width: 200px;
   height: $header-major-height;
