@@ -1,0 +1,24 @@
+@import 'src/assets/styles/abstracts/valiables';
+
+$breakpoints: (
+  'md': (max-width: $main-screen-md),
+);
+
+@mixin breakpoints($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}

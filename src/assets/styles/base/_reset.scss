@@ -2,6 +2,8 @@
 @import '~compass-mixins/lib/compass/css3/user-interface';
 @import '~compass-mixins/lib/compass/css3/box-sizing';
 
+@import 'src/assets/styles/abstracts/mixins/breakpoints';
+
 @include global-reset;
 @include reset-html5;
 
@@ -9,4 +11,13 @@
 *::before,
 *::after {
   @include box-sizing(border-box);
+}
+
+html,
+body {
+  font-size: 16px;
+
+  @include breakpoints(md) {
+    font-size: 14px;
+  }
 }

@@ -3,11 +3,13 @@
 @import '~compass-mixins/lib/compass/typography/links/link-colors';
 
 @import 'src/assets/styles/abstracts/valiables';
+@import 'src/assets/styles/abstracts/mixins/breakpoints';
 @import 'src/assets/styles/abstracts/mixins/layout';
 @import 'src/assets/styles/components/avatar';
 
 // Valiables
 $avatar-size: 100px;
+$avatar-size-md: 80px;
 
 // Layout
 @include layout('.profile', '.profile-header-layout, #{$header-minor-layout}', $minor-max-width);
@@ -30,12 +32,21 @@ $avatar-size: 100px;
   width: $avatar-size;
   height: $avatar-size;
   float: left;
+
+  @include breakpoints(md) {
+    width: $avatar-size-md;
+    height: $avatar-size-md;
+  }
 }
 
 .profile-detail {
   width: calc(100% - #{$avatar-size});
   padding-left: $main-padding;
   float: right;
+
+  @include breakpoints(md) {
+    width: calc(100% - #{$avatar-size-md});
+  }
 }
 
 .profile-name {
@@ -43,6 +54,10 @@ $avatar-size: 100px;
   line-height: $avatar-size / 2;
   font-weight: 600;
   font-size: 2em;
+
+  @include breakpoints(md) {
+    line-height: $avatar-size-md / 2;
+  }
 }
 
 .profile-description {

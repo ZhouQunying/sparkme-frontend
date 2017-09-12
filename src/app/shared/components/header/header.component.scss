@@ -16,7 +16,6 @@ $header-major-height: 65px;
 @include layout('.header', '.header-major-layout');
 
 .header {
-  @include user-select(none);
   background-color: hsl(0, 0%, 100%);
 }
 
@@ -95,6 +94,8 @@ $header-major-height: 65px;
 }
 
 .header-minor {
+  @include user-select(none);
+
   a {
     display: inline-block;
     margin-right: 1em;
