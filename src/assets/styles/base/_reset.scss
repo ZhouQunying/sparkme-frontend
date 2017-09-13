@@ -12,12 +12,3 @@
 *::after {
   @include box-sizing(border-box);
 }
-
-html,
-body {
-  font-size: 16px;
-
-  @include breakpoints(md) {
-    font-size: 14px;
-  }
-}

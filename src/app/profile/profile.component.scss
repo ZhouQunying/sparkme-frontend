@@ -63,7 +63,7 @@ $avatar-size-md: 80px;
 .profile-description {
   line-height: 1.4em;
   font-weight: 200;
-  color: $main-dark-gray;
+  color: $main-dark-mute;
 }
 
 .profile-valuation {
@@ -73,7 +73,7 @@ $avatar-size-md: 80px;
   li {
     @include transition-property(color);
     @include transition-duration($transition-duration);
-    @include link-colors($main-dark-gray, $main-link-color);
+    @include link-colors($main-gray, $main-link-color);
     float: left;
 
     &:not(:last-of-type) {
